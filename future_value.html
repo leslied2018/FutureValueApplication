@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">	
+    <meta charset="UTF-8">
     <title>Future Value Application</title>
     <script>
-		var futureValue;
-		
-		// get user entries
-		var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
-		investment = parseFloat(investment);
-		var rate = prompt("Enter interest rate as xx.x", 7.5);
-		rate = parseFloat(rate);
-		var years = prompt("Enter number of years", 10);
-		years = parseInt(years);
-		
-		// calulate future value
-		futureValue = investment;
-		for (var i = 1; i <= years; i++ ) {
-			futureValue = futureValue + (futureValue * rate / 100);
-		}
-		futureValue = parseInt(futureValue);	
+      var again = "y";
+      do {
+	       var futureValue;
+		     // get user entries
+        var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
+            investment = parseFloat(investment);
+        var rate = prompt("Enter interest rate as xx.x", 7.5);
+            rate = parseFloat(rate);
+        var years = prompt("Enter number of years", 10);
+            years = parseInt(years);
+        if (!isNaN (investment) && investment > 0)
+        {
+          // calulate future value
+          futureValue = investment;
+          for (var i = 1; i <= years; i++ ) {
+            futureValue = futureValue + (futureValue * rate / 100);
+            futureValue = parseInt(futureValue);
+        }
+		     else
+        {
+           alert("One or both entires are invalid");
+        }
+        again = prompt("Repeat entries?", "y");
+      }
+      while (again == "y");
+    // add a do-while statement to the application so the user can repeat the calculation for another series of entries
+    // do-while loop allows the user to enter the values into the web app again. this feature allows the web app to calculate future investment values for multiple years in a side by side comparison. 
+
     </script>
 </head>
 <body>
