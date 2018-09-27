@@ -47,6 +47,9 @@
           }
 		      futureValue = parseInt(futureValue);
           alert("Future Value = " + futureValue);
+          for (var futureValue = investment; futureValue < totals.length; futureValue++ ) {
+            sum += totals[futureValue];
+          }
 
         {
         again = prompt("Repeat entries?", "y");
@@ -63,6 +66,7 @@
 			document.write(" Interest rate = " + rate);
 			document.write(" Years = " + years);
 			document.write(" Future Value is " + futureValue + "<br><br>");
+      document.write(sum);
         </script>
         Thanks for using the Future Value application.
     </main>
