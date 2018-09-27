@@ -6,52 +6,39 @@
     <script>
     var again = "y";
     do {
-        {
         var futureValue;
-		    var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
-		    investment = parseFloat(investment);
-            if ( isNaN(investment) ) {
-              alert("Investment must be a number");
-              var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
-      		    investment = parseFloat(investment);
-            }
+        do {
+          var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
+         investment = parseFloat(investment);
+         if ( isNaN(investment) ) {
+           alert("Investment must be a number");
+         }
+        }
+        while ( isNaN(investment) );
 
-
-		    var rate = prompt("Enter interest rate as xx.x", 7.5);
+        var rate = prompt("Enter interest rate as xx.x", 7.5);
 		    rate = parseFloat(rate);
             if ( isNaN(rate) ) {
-              alert("Rate must be a number"); }
+              alert("Rate must be a number");
+            }
             if ( rate <= 0 || rate >= 15 ) {
               alert("Rate must be greater than 0% and less than 15%");
-              var rate = prompt("Enter interest rate as xx.x", 7.5);
-      		    rate = parseFloat(rate);
             }
 
 		    var years = prompt("Enter number of years", 10);
 		    years = parseInt(years);
             if ( isNaN(years) ) {
               alert("Years must be a number");
-              var years = prompt("Enter number of years", 10);
-      		    years = parseInt(years);
             }
-        if (!isNaN(investment) && investment >= 0
-            && !isNaN(rate) && rate <= 0
-            && !isNaN(rate) && rate >= 15
-            && !isNaN(years) && years < 0 ) {
-          } else {
-              alert("One or more entries are invalid. Please input entries again");
-          }
-        }
+            
 
-        {
+
 		    futureValue = investment;
 		      for (var i = 1; i <= years; i++ ) {
 			    futureValue = futureValue + (futureValue * rate / 100);
-		      {
+          }
 		      futureValue = parseInt(futureValue);
           alert("Future Value = " + futureValue);
-          }
-        }
 
         {
         again = prompt("Repeat entries?", "y");
